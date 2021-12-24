@@ -2,7 +2,6 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
-const dotenv = require("dotenv");
 
 const fileUpload = require('express-fileupload')
 const validateMiddleWare = require('./middleware/validation')
