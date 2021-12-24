@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
+const dotenv = require("dotenv");
 
 const fileUpload = require('express-fileupload')
 const validateMiddleWare = require('./middleware/validation')
@@ -70,9 +71,8 @@ app.use((req,res)=>{
     res.render('notfound')
 })
 
-// const url = "mongodb://localhost:27017/testdb"
-
-const url ='mongodb+srv://nikita:hLpussaSqbI39E71@cluster0.rhbqm.mongodb.net/testdb'
+require("dotenv").config();
+const url = process.env.MONGODB_URI;
 
 mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology: true})
 const con=mongoose.connection
