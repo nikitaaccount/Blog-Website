@@ -5,5 +5,5 @@ module.exports = async (req,res)=>{
     console.log(blogpost)
     res.render('post',{
        blogpost
-    });
+    })
 }

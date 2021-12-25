@@ -7,7 +7,7 @@ module.exports = async (req,res) =>{
         async (error)=>{
             await BlogPost.create({
                 ...req.body,
-                image:'C:/Users/DELL/Desktop/old photos/' + image.name,
+                image:'/assets/img/' + image.name,
                 userid: req.session.userId
 
             })
