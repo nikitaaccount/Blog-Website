@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const { resourceUsage } = require('process')
+const path = require("path");
 
 const fileUpload = require('express-fileupload')
 const validateMiddleWare = require('./middleware/validation')
