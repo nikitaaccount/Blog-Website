@@ -12,7 +12,7 @@ const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthen
 
 const app = new express()
 
-app.set("views", "views");
+app.set("views", "./views");
 app.set('view engine','ejs')
 
 // app.use(express.static('public')) 
