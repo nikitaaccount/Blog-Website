@@ -3,7 +3,6 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
 const flash = require('connect-flash');
 const { resourceUsage } = require('process')
-const path = require("path");
 
 const fileUpload = require('express-fileupload')
 const validateMiddleWare = require('./middleware/validation')
@@ -13,11 +12,9 @@ const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthen
 
 const app = new express()
 
-const views = path.join(__dirname + '/views');
-app.set("views", views);
+app.set("views", __dirname + '/views');
 app.set('view engine','ejs')
 
-// app.use(express.static('public')) 
 app.use(express.static(__dirname + "/public")) 
 app.use(fileUpload())
 app.use(bodyParser.json())
